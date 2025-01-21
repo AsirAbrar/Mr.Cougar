@@ -1,0 +1,72 @@
+/* General styling for the terminal */
+body {
+    background-color: #000;
+    color: #0f0;
+    font-family: monospace;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#terminal {
+    width: 80%;
+    max-width: 800px;
+    height: 70%;
+    background: #111;
+    border-radius: 8px;
+    padding: 20px;
+    overflow-y: auto;
+    box-shadow: 0 0 10px #0f0;
+    display: flex;
+    flex-direction: column;
+}
+
+#output {
+    font-size: 1rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    flex-grow: 1; /* Fills available space */
+}
+
+#input-line {
+    display: flex;
+    align-items: center;
+    font-size: 1rem; /* Ensures the prompt and input are the same size */
+    white-space: nowrap; /* Keeps the prompt and input on the same line */
+    margin-top: 5px; /* Slight margin for separation */
+}
+
+.prompt {
+    color: #0f0; /* Default green for processed prompts */
+    font-size: 1rem; /* Same size as the input */
+}
+
+.prompt-active {
+    color: red; /* Red color for the active prompt */
+}
+
+#texter {
+    background: none;
+    border: none;
+    color: #0f0;
+    font-family: monospace;
+    font-size: 1rem; /* Ensures input is the same size as the prompt */
+    resize: none;
+    outline: none;
+    flex-grow: 1;
+    height: 1.5rem; /* Fixed height to prevent shrinking */
+    line-height: 1.5rem; /* Ensure input text is aligned properly */
+}
+
+.cursor {
+    display: inline-block;
+    animation: blink 0.5s step-end infinite;
+}
+
+@keyframes blink {
+    from, to { opacity: 1; }
+    50% { opacity: 0; }
+}
